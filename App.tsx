@@ -25,6 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import 'react-native-get-random-values';
+import PolyfillCrypto from 'react-native-webview-crypto'
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -64,6 +67,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
+      <PolyfillCrypto />
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
